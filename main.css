@@ -1,4 +1,4 @@
-/* Definições Globais */
+/* Definições de Variáveis */
 :root {
     --green: #00ff00;
     --white: #ffffff;
@@ -7,7 +7,7 @@
 
 /* Tema Claro */
 .tema-claro {
-    --bg: var(--green);
+    --bg: var(--white);
     --fontColor: var(--black);
     --btnBg: var(--black);
     --btnFontColor: var(--white);
@@ -21,34 +21,75 @@
     --btnFontColor: var(--black);
 }
 
-/* Estilos Globais */
+/* Reset Básico */
 body {
     font-family: "Helvetica", sans-serif;
     background: var(--bg);
     color: var(--fontColor);
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
     transition: background 0.3s, color 0.3s;
 }
 
-/* Listas */
-ul {
+/* Menu de Navegação */
+header {
+    background: var(--black);
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.menu {
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-li {
-    list-style-type: circle;
+.menu li {
+    margin: 0 15px;
 }
 
-.lista {
-    list-style-type: square;
+.menu a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* Botão de Alternância de Tema */
+.tema-escuro .menu a {
+    color: var(--green);
+}
+
+.menu a:hover {
+    color: var(--green);
+}
+
+/* Seções */
+main {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--fontColor);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Botão de Troca de Tema */
 .btn {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     height: 50px;
     width: 50px;
@@ -57,16 +98,16 @@ li {
     background-color: var(--btnBg);
     color: var(--btnFontColor);
     cursor: pointer;
-    font-weight: bold;
+    font-size: 20px;
     transition: background 0.3s, color 0.3s;
 }
 
-/* Efeito ao passar o mouse */
+/* Hover do Botão */
 .btn:hover {
     opacity: 0.8;
 }
 
-/* Foco acessível */
+/* Acessibilidade */
 .btn:focus {
     outline: 2px solid var(--btnFontColor);
     outline-offset: 2px;
