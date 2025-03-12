@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple website</title>
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="tema-claro">
-    <h1>Lista de Tarefas</h1>
-    <p>Tarefas atuais:</p>
-    <ul>
-        <li class="lista">Adicionar estilos visuais</li>
-        <li class="lista">Adicionar temas claros e escuros</li>
-        <li>Ativar troca de temas</li>
-    </ul>
-    <div>
-        <button class="btn">Dark</button>
-    </div>
+    <header>
+        <h1>Lista de Tarefas</h1>
+    </header>
 
-    <!-- Mostrar toda a pagina web primeiro e em seguida executar o javascript -->
+    <main>
+        <section>
+            <p>Tarefas atuais:</p>
+            <ul>
+                <li>Adicionar estilos visuais</li>
+                <li>Adicionar temas claros e escuros</li>
+                <li>Ativar troca de temas</li>
+            </ul>
+        </section>
+
+        <button id="toggleTema" class="btn">Modo Escuro</button>
+    </main>
+
     <script src="app.js"></script>
-    <noscript>Habilite o seu Javascript para visualizar o site completo.</noscript>
+    <noscript>Habilite o JavaScript para visualizar o site completo.</noscript>
 </body>
 </html>
