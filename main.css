@@ -1,63 +1,73 @@
-body{
-    font-family: monospace;
-}
-
-ul{
-    font-family: helvética;
-}
-
-li{
-    list-style: circle;
-}
-
-.lista{
-    list-style: square;
-}
-
-:root{
+/* Definições Globais */
+:root {
     --green: #00ff00;
-    --white:#ffffff;
+    --white: #ffffff;
     --black: #000000;
-
 }
 
-.tema-claro{
+/* Tema Claro */
+.tema-claro {
     --bg: var(--green);
     --fontColor: var(--black);
     --btnBg: var(--black);
     --btnFontColor: var(--white);
 }
 
-.tema-escuro{
+/* Tema Escuro */
+.tema-escuro {
     --bg: var(--black);
     --fontColor: var(--green);
     --btnBg: var(--white);
     --btnFontColor: var(--black);
 }
 
-*{
-    color: var(--fontColor);
-    font-family: Helvetica;
-}
-
-body{
+/* Estilos Globais */
+body {
+    font-family: "Helvetica", sans-serif;
     background: var(--bg);
+    color: var(--fontColor);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
 }
 
-.btn{
-    position: absolute;
+/* Listas */
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: circle;
+}
+
+.lista {
+    list-style-type: square;
+}
+
+/* Botão de Alternância de Tema */
+.btn {
+    position: fixed;
     top: 20px;
-    left: 270px;
+    right: 20px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     border: none;
-    color: var(--btnFontColor);
     background-color: var(--btnBg);
+    color: var(--btnFontColor);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
 }
 
-.btn:focus{
-    outline-style: none;
+/* Efeito ao passar o mouse */
+.btn:hover {
+    opacity: 0.8;
 }
 
-
+/* Foco acessível */
+.btn:focus {
+    outline: 2px solid var(--btnFontColor);
+    outline-offset: 2px;
+}
