@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
+    <title>Site Simples</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="tema-claro">
+    <!-- Menu de Navegação -->
     <header>
-        <h1>Lista de Tarefas</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- Seções do Site -->
     <main>
-        <section>
-            <p>Tarefas atuais:</p>
-            <ul>
-                <li>Adicionar estilos visuais</li>
-                <li>Adicionar temas claros e escuros</li>
-                <li>Ativar troca de temas</li>
-            </ul>
+        <section id="inicio">
+            <h1>Bem-vindo ao Site Simples</h1>
+            <p>Este é um site básico com troca de tema e um menu funcional.</p>
         </section>
 
-        <button id="toggleTema" class="btn">Modo Escuro</button>
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>Este site foi criado como um exemplo de estrutura simples e organizada.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: exemplo@email.com</p>
+        </section>
     </main>
 
+    <!-- Botão de Troca de Tema -->
+    <button id="toggleTema" class="btn" title="Alternar tema">🌙</button>
+
     <script src="app.js"></script>
-    <noscript>Habilite o JavaScript para visualizar o site completo.</noscript>
 </body>
 </html>
