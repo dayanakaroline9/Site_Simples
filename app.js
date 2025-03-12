@@ -1,17 +1,34 @@
-'use strict' //modo estrito 
+'use strict'; // Modo estrito
 
-const bnt = document.querySelector('.btn'); //acessa o botão
+const btn = document.querySelector('.btn'); // Acessa o botão
+const body = document.body;
 
-bnt.addEventListener('click',function(){
-    document.body.classList.toggle('tema-escuro');
+// Função para alternar o tema
+function alternarTema() {
+    body.classList.toggle('tema-escuro');
 
-    //verifica qual o tema atual acessando a classe do copo html
-    var tema = document.body.className;
-    if(tema == "tema-claro"){
-        this.textContent = "escuro"; //muda texto do botão para escuro
-    }else{
-        this.textContent = "claro"; //muda texto do botão para claro
+    // Verifica se o tema escuro está ativado
+    const temaEscuroAtivo = body.classList.contains('tema-escuro');
+
+    // Atualiza o texto e title do botão
+    btn.textContent = temaEscuroAtivo ? "Modo Claro" : "Modo Escuro";
+    btn.setAttribute('title', temaEscuroAtivo ? "Ativar modo claro" : "Ativar modo escuro");
+
+    // Armazena a preferência do usuário no localStorage
+    localStorage.setItem('tema', temaEscuroAtivo ? 'tema-escuro' : 'tema-claro');
+
+    console.log("Tema atual:", temaEscuroAtivo ? "tema-escuro" : "tema-claro");
+}
+
+// Adiciona o evento de clique no botão
+btn.addEventListener('click', alternarTema);
+
+// Verifica o tema salvo no localStorage e aplica ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo === 'tema-escuro') {
+        body.classList.add('tema-escuro');
+        btn.textContent = "Modo Claro";
+        btn.setAttribute('title', "Ativar modo claro");
     }
-    console.log("Tema atual:"+tema)
 });
-
